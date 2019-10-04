@@ -12,14 +12,19 @@
   float: left;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   font-family: @fontBlack;
   font-weight: 900;
   font-size: 60px;
-  line-height: 110.4%;
   color: @blackTitle;
   width: 362px;
-  margin-top: 77px;
+  margin-top: 48px;
+  margin-bottom: 53px;
+  line-height: 1em;
 
   .xxl-block ({
   });
@@ -39,7 +44,9 @@ h1 {
 
 header {
   display: flex;
-  width: 100%;
+  width: 1440px;
+  margin: auto;
+  box-shadow: 0em 1em 20px 0px rgba(122, 122, 122, 0.27);
 }
 
 .menu {
@@ -70,7 +77,7 @@ header {
   align-items: center;
 }
 
-.wrapp {
+.wrap-offer {
   margin-left: 140px;
 }
 
@@ -78,7 +85,7 @@ header {
   font-family: @fontRegular;
   font-size: 20px;
   line-height: 23px;
-  margin-top: 53px;
+  margin-bottom: 34px;
 }
 
 .btn {
@@ -91,6 +98,127 @@ header {
   color: @white;
   text-decoration: none;
 }
+
+.wrap-img {
+  width: 636px;
+  margin-top: 66px;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+
+.wrap-img img {
+  margin-right: 18px;
+}
+
+.box-1 {
+  margin-right: 51px;
+}
+
+.box-2 {
+  width: 100%;
+  max-width: 655px;
+  height: 750px;
+  position: relative;
+  flex-wrap: nowrap;
+}
+.box-2 img {
+  height: 750px;
+}
+
+.arrows {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10
+}
+
+.arrows img{
+  height: auto;
+}
+
+.arrow-left {
+  display: flex;
+  align-content: normal;
+  justify-content: center;
+  align-items: center;
+  background: @red;
+  width: 97px;
+  height: 97px;
+  float: left;
+}
+
+.arrow-right {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background: @white;
+  width: 97px;
+  height: 97px;
+}
+
+.box-3 {
+  display: flex;
+  width: 100px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.burger {
+  margin-top: 15px;
+  width: 100%;
+  max-width: 37px;
+  align-self: center;
+  flex-grow: 2;
+}
+.burger-item {
+  background: #3F3F3F;
+  height: 2px;
+  display: block;
+  margin-bottom: 7px;
+}
+
+.burger-item__1 {
+  width: 31px;
+}
+
+.burger-item__2 {
+  width: 24px;
+}
+
+.burger-item__3 {
+  width: 37px;
+}
+
+.social {
+  align-self: center;
+  width: 20px;
+  flex-grow: 3;
+}
+
+.social img{
+  margin-bottom: 33px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
