@@ -155,8 +155,7 @@ header {
 .wrap-img {
   max-width: 636px;
   margin-top: 66px;
-  display: flex;
-  flex-direction: row-reverse;
+  height: 200px;
   overflow: hidden;
   width: 100%;
   .xs-block ({
@@ -164,18 +163,19 @@ header {
   });
 }
 
-.wrap-img img {
-  margin-right: 18px;
-    .x1440-block ({
-      width: 125px;
-    });
-    .xs-block ({
-      width: 159px;
-      height: 201px;
-      margin-right: 18px;
-      margin-left: auto;
-    });
+.line {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  left: 0;
+  transition: all ease 1s;
 }
+.img-gallary {
+  width: 220px;
+  width: 180px;
+  margin-right: 18px;
+}
+
 
 .box-1 {
   margin-right: 51px;
