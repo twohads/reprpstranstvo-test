@@ -6,7 +6,10 @@ let lineWidth = 0;
 let offset = 0;
 let step = 0;
 let residue;
-var isResizeble = false;
+let next = document.querySelector('.arrow-right');
+let prev = document.querySelector('.arrow-left');
+
+
 
 for (let i = 0; i < images.length; i++){
     widthArray.push(images[i].offsetWidth);
@@ -15,7 +18,10 @@ for (let i = 0; i < images.length; i++){
 
 line.style.width = (18*(images.length+1)) + lineWidth+'px';
 
-document.onclick = function () {
+console.log(step);
+console.log(line.style.left);
+
+next.onclick = function () {
 
     residue = lineWidth - sliderWidth - (offset + widthArray[step]);
     if(residue >= 0){
@@ -24,6 +30,7 @@ document.onclick = function () {
          }
         offset = offset + widthArray[step];
         line.style.left = -offset+'px';
+        console.log(line.style.left);
     }
     else {
         line.style.left = -(lineWidth - sliderWidth)+'px';
@@ -38,6 +45,16 @@ document.onclick = function () {
     else {
         step++;
     }
+console.log(step);
+
+}
+
+prev.onclick = function () {
+    step--;
+    offset = offset + widthArray[step];
+    let currentLeft = parseInt(getComputedStyle(line).left);
+    console.log(line.style.left = (currentLeft - offset)+'px');
+
 
 
 }
