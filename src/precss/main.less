@@ -171,12 +171,15 @@ header {
   left: 0;
   transition: all ease 1s;
 }
-.img-gallary {
+.line .img-gallary {
   width: 220px;
   width: 180px;
   margin-right: 18px;
 }
 
+.line .im-small-active {
+  box-shadow: 1px -1px 16px 2px #dc143c;
+}
 
 .box-1 {
   margin-right: 51px;
@@ -190,14 +193,18 @@ header {
   width: 100%;
   max-width: 655px;
   position: relative;
+  display: inline-flex;
+  overflow: hidden;
   flex-wrap: nowrap;
   background: #FF0000;
     .xs-block ({
       display: none;
     });
 }
-.box-2 img {
+.box-2 .img-maim {
   height: 750px;
+  flex-shrink: 0;
+  display: none;
     .x1440-block ({
       width: 100%;
       height: 658px;
@@ -205,7 +212,12 @@ header {
     .sm-block ({
       height: 584px;
     });
+}
 
+.box-2 .im-main-active {
+  display: block;
+  transition: all ease 1s;
+  border: 1px solid crimson;
 }
 
 .arrows {
