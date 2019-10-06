@@ -10,50 +10,59 @@ let next = document.querySelector('.arrow-right');
 let prev = document.querySelector('.arrow-left');
 
 
-
 for (let i = 0; i < images.length; i++){
     widthArray.push(images[i].offsetWidth);
-    lineWidth += images[i].offsetWidth;
+    lineWidth += images[i].offsetWidth + parseInt(getComputedStyle(images[i]).marginRight);
 }
+console.log(lineWidth);
+line.style.width = lineWidth+'px';
 
-line.style.width = (18*(images.length+1)) + lineWidth+'px';
-
-console.log(step);
-console.log(line.style.left);
 
 next.onclick = function () {
 
     residue = lineWidth - sliderWidth - (offset + widthArray[step]);
+
     if(residue >= 0){
-         if(offset == 0){
-             step = +1;
-         }
+        if(offset == 0){
+            step = 1;
+            offset = 1
+        }
         offset = offset + widthArray[step];
         line.style.left = -offset+'px';
-        console.log(line.style.left);
+        console.log(offset, step);
+        console.log('равно 0');
     }
     else {
-        line.style.left = -(lineWidth - sliderWidth)+'px';
         offset = 0;
-        step = -1;
+        step = 0;
+        line.style.left = -(lineWidth - sliderWidth)+'px';
+        console.log(offset, step);
+        console.log('больше 0');
+
     }
 
     if(step+1 == images.length){
         step = 0;
         offset = 0;
+        line.style.left = 0;
+        console.log(offset, step);
+        console.log('условия равны');
     }
     else {
         step++;
+        console.log(offset, step);
+        console.log('мимо условий');
     }
-console.log(step);
+
 
 }
 
 prev.onclick = function () {
     step--;
-    offset = offset + widthArray[step];
     let currentLeft = parseInt(getComputedStyle(line).left);
-    console.log(line.style.left = (currentLeft - offset)+'px');
+    line.style.left = (currentLeft + widthArray[step])+'px';
+
+    console.log(offset, step);
 
 
 
