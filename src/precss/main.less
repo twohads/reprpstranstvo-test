@@ -40,7 +40,8 @@ h1 {
   });
 
   .xl1080-block ({
-    font-size: 54px;
+    font-size: 36px;
+    width: 200px;
   });
   .md-block ({
   });
@@ -60,29 +61,23 @@ h1 {
 
 h2 {
   font-family: @fontBlack;
-  font-size: 50px;
+  font-size: 48px;
+  line-height: 110.4%;
   color: @black;
-  width: 362px;
-  margin-top: 48px;
-  margin-bottom: 53px;
-  line-height: 1em;
+  width: 400px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
-h3  {
-  font-family: @fontBlack;
-  font-size: 30px;
+h3 {
+  font-family: @fontBold;
+  font-size: 26px;
   color: @black;
 }
 
 h4 {
   font-family: @fontBlack;
-  font-size: 25px;
-  color: @black;
-}
-
-h5 {
-  font-family: @fontRegular;
-  font-size: 16px;
+  font-size: 14px;
   color: @black;
 }
 
@@ -105,7 +100,11 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 362px;
-    .sm-block ({
+  .xl1080-block ({
+    width: 250px;
+  });
+
+  .sm-block ({
       width: 162px;
       margin-left: 42px;
     });
@@ -125,7 +124,7 @@ header {
 }
 
 .link-item__2 {
-  .sm-block ({
+  .xl1080-block ({
     display: none;
   });
 }
@@ -237,6 +236,9 @@ header {
 .box-1 {
   margin-right: 51px;
   flex-basis: 603px;
+  .xl1080-block ({
+    flex-basis: 326px;
+  });
     .xs-block ({
       margin-right: 0;
       flex-grow: 4;
@@ -261,8 +263,10 @@ header {
       width: 100%;
       //height: 658px;
     });
+    .xl1080-block ({
+      height: 586px;
+    });
     .sm-block ({
-      height: 584px;
     });
 }
 
@@ -274,6 +278,12 @@ header {
   position: relative;
   height: 750px;
   width: 100%;
+    .xl1080-block ({
+      height: 586px;
+    });
+    .md-block ({
+      height: 586px;
+    });
 }
 .arrows {
   position: absolute;
