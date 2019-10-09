@@ -1,9 +1,19 @@
-@import "project.less";
 @import "smart-grid.less";
 @import "fonts.less";
+@import "project.less";
+@import "about.less";
+@import "product-slider.less";
+@import "projects-prew.less";
+@import "consultation.less";
+
 
 .reset();
-
+.shadow {
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0 1em 20px 0 rgba(122, 122, 122, 0.27);
+}
 .cube-active {
   background: @red;
   width: 9px;
@@ -20,11 +30,11 @@ h1 {
   font-family: @fontBlack;
   font-weight: 900;
   font-size: 60px;
-  color: @blackTitle;
+  color: @black;
   width: 362px;
   margin-top: 48px;
-  margin-bottom: 53px;
-  line-height: 1em;
+  margin-bottom: 46px;
+  line-height: 110.4%;
 
   .xxl-block ({
   });
@@ -48,11 +58,38 @@ h1 {
 
 }
 
+h2 {
+  font-family: @fontBlack;
+  font-size: 50px;
+  color: @black;
+  width: 362px;
+  margin-top: 48px;
+  margin-bottom: 53px;
+  line-height: 1em;
+}
+
+h3  {
+  font-family: @fontBlack;
+  font-size: 30px;
+  color: @black;
+}
+
+h4 {
+  font-family: @fontBlack;
+  font-size: 25px;
+  color: @black;
+}
+
+h5 {
+  font-family: @fontRegular;
+  font-size: 16px;
+  color: @black;
+}
+
 header {
   display: flex;
   max-width: 1440px;
   margin: auto;
-  box-shadow: 0em 1em 20px 0px rgba(122, 122, 122, 0.27);
   .xl1080-block ({
     box-shadow: none;
   });
@@ -77,7 +114,14 @@ header {
     });
 }
 
-.link-item {
+.link-item a{
+  font-family: @fontRegular;
+  font-size: 14px;
+  color: @grey_no_active_item;
+}
+
+.link-item a.active-link{
+  color: @black;
 }
 
 .link-item__2 {
@@ -122,6 +166,7 @@ header {
 
 .wrap-offer {
   margin-left: 140px;
+
     .sm-block ({
       margin-left: 93px;
     });
@@ -134,7 +179,7 @@ header {
   font-family: @fontRegular;
   font-size: 20px;
   line-height: 23px;
-  margin-bottom: 34px;
+  margin-bottom: 23px;
     .xs-block ({
       margin-bottom: 15px;
       font-size: 16px;
@@ -155,34 +200,43 @@ header {
 .wrap-img {
   max-width: 636px;
   margin-top: 66px;
-  height: 200px;
-  overflow: hidden;
+  height: 226px;
   width: 100%;
+  overflow: hidden;
+  position: relative;
   .xs-block ({
 
   });
 }
 
 .line {
-  position: relative;
   height: 180px;
   display: inline-flex;
   overflow: hidden;
-  left: 0;
   transition: all ease 1s;
+  position: absolute;
+  right: 0;
+  left: auto;
+  padding-bottom: 100px;
 }
 .line .img-gallary {
-  width: 220px;
-  width: 180px;
   margin-right: 18px;
+  width: 215px;
+  height: 211px;
+    .xl1080-block ({
+      margin-right: 10px;
+      width: 109px;
+      height: 107px;
+    });
 }
 
 .line .im-small-active {
-  box-shadow: 1px -1px 16px 2px #dc143c;
+  box-shadow: 1px 5px 11px 0 #3f3f3f8a;
 }
 
 .box-1 {
   margin-right: 51px;
+  flex-basis: 603px;
     .xs-block ({
       margin-right: 0;
       flex-grow: 4;
@@ -192,11 +246,9 @@ header {
 .box-2 {
   width: 100%;
   max-width: 655px;
-  position: relative;
   display: inline-flex;
   overflow: hidden;
   flex-wrap: nowrap;
-  background: #FF0000;
     .xs-block ({
       display: none;
     });
@@ -207,7 +259,7 @@ header {
   display: none;
     .x1440-block ({
       width: 100%;
-      height: 658px;
+      //height: 658px;
     });
     .sm-block ({
       height: 584px;
@@ -217,9 +269,12 @@ header {
 .box-2 .im-main-active {
   display: block;
   transition: all ease 1s;
-  border: 1px solid crimson;
 }
-
+.box2-wrapp {
+  position: relative;
+  height: 750px;
+  width: 100%;
+}
 .arrows {
   position: absolute;
   bottom: 0;

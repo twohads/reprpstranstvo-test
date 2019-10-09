@@ -1,99 +1,99 @@
 let line = document.querySelector('.line');
 let images = document.querySelectorAll('.img-gallary');
-let sliderWidth = document.querySelector('.wrap-img').offsetWidth;
-let widthArray = [0];
 let imageWidth;
 let lineWidth = 0;
-let offset = 0;
-let step = 0;
-let residue = 0;
 let next = document.querySelector('.arrow-right');
 let prev = document.querySelector('.arrow-left');
-let lineLeft = 0;
 
 let imageMain = document.querySelectorAll('.img-maim');
 
-for (let i = 0; i < images.length; i++){
-    widthArray.push(images[i].offsetWidth);
-    lineWidth += images[i].offsetWidth + parseInt(getComputedStyle(images[i]).marginRight);
-    imageWidth = images[0].offsetWidth + parseInt(getComputedStyle(images[i]).marginRight);
-    images[0].classList.add('im-small-active');
-}
+var activeNumber = images.length - 1;
+var countImages = images.length - 1;
 
-for (let i = 0; i < imageMain.length; i++){
-    if(imageMain[0]){
-        imageMain[0].classList.add('im-main-active');
+imageWidth = images[activeNumber].offsetWidth + parseInt(getComputedStyle(images[activeNumber]).marginRight);
+
+lineWidth = imageWidth * (countImages + 1);
+line.style.width = lineWidth + 'px';
+
+images[activeNumber].classList.add('im-small-active');
+imageMain[activeNumber].classList.add('im-main-active');
+
+windowWidth = window.innerWidth;
+
+function nextItem() {
+    images[activeNumber].classList.remove('im-small-active');
+    imageMain[activeNumber].classList.remove('im-main-active');
+
+    activeNumber = !activeNumber ? countImages : activeNumber - 1;
+
+    images[activeNumber].classList.add('im-small-active');
+    imageMain[activeNumber].classList.add('im-main-active');
+
+    if (activeNumber > 0 || windowWidth < 800) {
+        line.style.right =- (imageWidth * (countImages - activeNumber)) + 'px';
     }
 }
 
+function prevItem() {
+    images[activeNumber].classList.remove('im-small-active');
+    imageMain[activeNumber].classList.remove('im-main-active');
 
+    activeNumber = activeNumber === countImages ? 0 : activeNumber + 1;
 
-line.style.width = lineWidth+'px';
+    images[activeNumber].classList.add('im-small-active');
+    imageMain[activeNumber].classList.add('im-main-active');
 
-next.onclick = function () {
+    line.style.right =- (imageWidth * (countImages - activeNumber)) + 'px';
 
-    residue = lineWidth - sliderWidth + imageWidth;
-
-
-    if(imageMain[step].classList.contains("im-main-active")){
-        imageMain[step].classList.remove('im-main-active');
+    if (!activeNumber && windowWidth >= 800) {
+        line.style.right =- (imageWidth * (countImages - activeNumber - 1)) + 'px';
     }
-
-    if(images[step].classList.contains('im-small-active')){
-        images[step].classList.remove('im-small-active');
-    }
-
-    offset = offset + imageWidth;
-    line.style.left = -offset+'px';
-    step++;
-
-    if(step < images.length){
-        imageMain[step].classList.add('im-main-active');
-        images[step].classList.add('im-small-active');
-    }
-
-
-
-    if(offset > residue){
-        line.style.left =  parseInt(getComputedStyle(line).left)+'px';
-        console.log(offset, step, residue, parseInt(getComputedStyle(line).left));
-        console.log(imageMain[step]);
-            if(step == images.length ){
-                console.log('степ равен');
-                step = 0;
-                offset = 0;
-                line.style.left = 0+'px';
-                imageMain[0].classList.add('im-main-active');
-                images[step].classList.add('im-small-active');
-                return;
-            }
-    }
-
-
-
 }
 
-prev.onclick = function () {
-    step--;
+next.onclick = nextItem;
+prev.onclick = prevItem;
 
-    if(imageMain[step].classList.contains("im-main-active")){
-        imageMain[step].classList.remove('im-main-active');
+//var hammertime = new Hammer(line);
+//hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+
+//hammertime.on("swipeleft", prevItem);
+//hammertime.on("swiperight", nextItem);
+
+
+// Product slider
+$('.slider-product-items').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true
+});
+
+let productSlider1 = document.querySelectorAll('.slider-product-item');
+
+for (let i = 0; i < productSlider1.length; i++){
+    productSlider1[i].onclick = function (event) {
+        console.log('мимсоль');
     }
-
-    if(images[step].classList.contains('im-small-active')){
-        images[step].classList.remove('im-small-active');
-    }
-
-    imageMain[step].classList.add('im-main-active');
-    images[step].classList.add('im-small-active');
-
-
-    if(parseInt(getComputedStyle(line).left) >= 10 || parseInt(getComputedStyle(line).left) == 0){
-        offset = 0;
-        step = 0;
-        line.style.left = parseInt(getComputedStyle(line).left)+'px';
-        return;
-    }
-    line.style.left = parseInt(getComputedStyle(line).left) + imageWidth+'px';
-    console.log(parseInt(getComputedStyle(line).left));
 }
+
+/*
+let commonWrapp = document.querySelector('.common-project-small-wrapp').offsetWidth;
+let boxWrapp = document.querySelector('.project-box2').offsetWidth;
+let imgProjectSmall = document.querySelectorAll('.wrapper-project-small');
+console.log(commonWrapp, boxWrapp);
+
+for (let i = 0; i < imgProjectSmall.length; i++){
+    imgProjectSmall[i].style.width = commonWrapp / 2 - 30+'px';
+}
+
+document.addEventListener("DOMContentLoaded", function(event)
+{
+    window.onresize = function() {
+        for (let i = 0; i < imgProjectSmall.length; i++){
+            console.log('hbdtt');
+            imgProjectSmall[i].style.width = commonWrapp / 2 - 30+'px';
+        }
+    };
+});
+*/
