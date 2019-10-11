@@ -66,7 +66,17 @@ $('.slider-product-items').slick({
     slidesToScroll: 1,
     dots: false,
     centerMode: false,
-    focusOnSelect: true
+    focusOnSelect: true,
+    responsive: [
+        {
+            breakpoint: 660,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+            }
+        }
+    ]
 });
 
 let productSlider1 = document.querySelectorAll('.slider-product-item');
@@ -83,9 +93,13 @@ function run(){
     let foto = document.querySelector('.foto');
     let wrapperProductSlider = document.querySelector('.wrapper-product-slider');
     let wrappProject = document.querySelector('.wrapp-project');
+    let consultWrapp = document.querySelector('.box-consultation-2');
+    let footerWrapp = document.querySelector('.footer-wrapper');
     console.log(lastColWidht);
     foto.style.marginRight = lastColWidht + 'px';
     wrapperProductSlider.style.marginRight = lastColWidht + 'px';
-    wrappProject.style.marginRight = lastColWidht + 'px';
+    wrappProject.style.paddingRight = (lastColWidht - 50) + 'px';
+    consultWrapp.style.marginRight = lastColWidht + 'px';
+    footerWrapp.style.paddingRight = lastColWidht + 'px';
 }
 window.addEventListener('resize', run);
