@@ -76,24 +76,16 @@ for (let i = 0; i < productSlider1.length; i++){
         console.log('мимсоль');
     }
 }
+run();
 
-/*
-let commonWrapp = document.querySelector('.common-project-small-wrapp').offsetWidth;
-let boxWrapp = document.querySelector('.project-box2').offsetWidth;
-let imgProjectSmall = document.querySelectorAll('.wrapper-project-small');
-console.log(commonWrapp, boxWrapp);
-
-for (let i = 0; i < imgProjectSmall.length; i++){
-    imgProjectSmall[i].style.width = commonWrapp / 2 - 30+'px';
+function run(){
+    let lastColWidht = document.querySelector('.box-3').offsetWidth;
+    let foto = document.querySelector('.foto');
+    let wrapperProductSlider = document.querySelector('.wrapper-product-slider');
+    let wrappProject = document.querySelector('.wrapp-project');
+    console.log(lastColWidht);
+    foto.style.marginRight = lastColWidht + 'px';
+    wrapperProductSlider.style.marginRight = lastColWidht + 'px';
+    wrappProject.style.marginRight = lastColWidht + 'px';
 }
-
-document.addEventListener("DOMContentLoaded", function(event)
-{
-    window.onresize = function() {
-        for (let i = 0; i < imgProjectSmall.length; i++){
-            console.log('hbdtt');
-            imgProjectSmall[i].style.width = commonWrapp / 2 - 30+'px';
-        }
-    };
-});
-*/
+window.addEventListener('resize', run);

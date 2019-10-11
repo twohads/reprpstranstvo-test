@@ -5,6 +5,13 @@
   margin-left: auto;
   background: white;
   padding-bottom: 100px;
+  .xl1080-block ({
+    padding-bottom: 36px;
+  });
+  .sm-block ({
+    flex-direction: column;
+    padding-bottom: 0;
+  });
 }
 .box-about-left {
   flex:1 1 calc(~"50% - 27px");
@@ -14,6 +21,12 @@
   margin-left: 140px;
   max-width: 400px;
   min-width: 100px;
+    .md-block ({
+      margin-left: 40px;
+    });
+  .sm-block ({
+    margin-top: 70px;
+  });
 
 }
 .small-description {
@@ -30,11 +43,17 @@
 .box-about-left h2 {
   max-width: 418px;
   min-width: 100px;
+    .xl1080-block ({
+      max-width: 300px;
+    });
 }
 
 .about-desc {
   margin-left: 140px;
   margin-top: 20px;
+    .md-block ({
+      margin-left: 40px;
+    });
 }
 
 .about-desc p {
@@ -76,20 +95,34 @@
 .foto {
   flex-grow: 1;
   max-width: 485px;
-  margin-left: 10%;
+  margin-left: auto;
   min-width: 100px;
+  .sm-block ({
+    margin-top: 133px;
+    padding-right: 70px;
+  });
 }
 .red-cub-foto {
   width: 100%;
   background-color: @red;
   height: 500px;
   position: relative;
+    .xl-block ({
+      margin-left: auto;
+      width: 80%;
+    });
+  .sm-block ({
+    margin-right: auto;
+  });
 }
 
 .tz-foto {
   position: absolute;
   bottom: 0;
   left: 60px;
+  .xl1080-block ({
+    left: 7px;
+  });
 }
 
 

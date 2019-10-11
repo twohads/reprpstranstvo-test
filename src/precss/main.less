@@ -26,6 +26,15 @@ a {
   text-decoration: none;
 }
 
+p {
+  font-family: @fontRegular;
+  font-size: 16px;
+  line-height: 136.9%;
+  .xl1080-block ({
+    font-size: 14px;
+  });
+}
+
 h1 {
   font-family: @fontBlack;
   font-weight: 900;
@@ -67,12 +76,18 @@ h2 {
   width: 400px;
   margin-top: 30px;
   margin-bottom: 50px;
-}
+    .xl1080-block ({
+      font-size: 36px;
+    });
+  }
 
 h3 {
   font-family: @fontBold;
   font-size: 26px;
   color: @black;
+  .xl1080-block ({
+    font-size: 18px;
+  });
 }
 
 h4 {
@@ -81,6 +96,15 @@ h4 {
   color: @black;
 }
 
+.h4 {
+  font-family: @fontBlack;
+  font-size: 14px;
+  color: @red;
+}
+h5 {
+  font-family: @fontBold;
+  font-size: 14px;
+}
 header {
   display: flex;
   max-width: 1440px;
@@ -203,9 +227,9 @@ header {
   width: 100%;
   overflow: hidden;
   position: relative;
-  .xs-block ({
-
-  });
+    .xl1080-block ({
+      height: 122px;
+    });
 }
 
 .line {
@@ -217,6 +241,9 @@ header {
   right: 0;
   left: auto;
   padding-bottom: 100px;
+  .xl1080-block ({
+    padding-bottom: 10px;
+  });
 }
 .line .img-gallary {
   margin-right: 18px;
@@ -267,6 +294,7 @@ header {
       height: 586px;
     });
     .sm-block ({
+      height: 564px;
     });
 }
 
@@ -283,6 +311,9 @@ header {
     });
     .md-block ({
       height: 586px;
+    });
+    .sm-block ({
+      height: 564px;
     });
 }
 .arrows {
