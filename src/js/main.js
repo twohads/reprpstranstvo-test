@@ -10,6 +10,7 @@ let imageMain = document.querySelectorAll('.img-maim');
 var activeNumber = images.length - 1;
 var countImages = images.length - 1;
 
+
 imageWidth = images[activeNumber].offsetWidth + parseInt(getComputedStyle(images[activeNumber]).marginRight);
 
 lineWidth = imageWidth * (countImages + 1);
@@ -23,11 +24,19 @@ windowWidth = window.innerWidth;
 function nextItem() {
     images[activeNumber].classList.remove('im-small-active');
     imageMain[activeNumber].classList.remove('im-main-active');
-
     activeNumber = !activeNumber ? countImages : activeNumber - 1;
 
     images[activeNumber].classList.add('im-small-active');
     imageMain[activeNumber].classList.add('im-main-active');
+    anime({
+        targets: '.im-main-active',
+        opacity: 0.5,
+        width: '0%', // -> from '28px' to '100%',
+        duration: 70,
+        easing: 'easeInOutQuad',
+        direction: 'reverse'
+    });
+
 
     if (activeNumber > 0 || windowWidth < 800) {
         line.style.right =- (imageWidth * (countImages - activeNumber)) + 'px';
@@ -42,6 +51,14 @@ function prevItem() {
 
     images[activeNumber].classList.add('im-small-active');
     imageMain[activeNumber].classList.add('im-main-active');
+    anime({
+        targets: '.im-main-active',
+        opacity: 0.5,
+        width: '0%', // -> from '28px' to '100%',
+        duration: 70,
+        easing: 'easeInOutQuad',
+        direction: 'reverse'
+    });
 
     line.style.right =- (imageWidth * (countImages - activeNumber)) + 'px';
 
