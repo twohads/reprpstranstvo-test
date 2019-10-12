@@ -50,8 +50,6 @@ h1 {
     font-size: 36px;
     width: 200px;
   });
-  .md-block ({
-  });
   .sm-block ({
     font-size: 36px;
     width: 222px;
@@ -272,7 +270,7 @@ header {
 }
 
 .line .im-small-active {
-  box-shadow: 1px 5px 11px 0 #3f3f3f8a;
+  box-shadow: 2px 14px 11px -9px rgba(0,0,0,.55);
 }
 
 .box-1 {
@@ -347,10 +345,26 @@ header {
   width: 97px;
   height: 97px;
   float: left;
+  cursor: pointer;
     .sm-block ({
       width: 49px;
       height: 49px;
     });
+}
+
+.arrow-left:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+  transition-property: transform;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.arrow-left:active {
+  transform: scale(1.1);
+  transition-duration: 0.1s;
+  transition-property: transform;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  background: white;
 }
 
 .arrow-right {
@@ -361,10 +375,26 @@ header {
   background: @white;
   width: 97px;
   height: 97px;
+  cursor: pointer;
     .sm-block ({
       width: 49px;
       height: 49px;
     });
+}
+
+.arrow-right:hover {
+  transform: scale(1.1);
+  transition-duration: 0.1s;
+  transition-property: transform;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.arrow-right:active {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+  transition-property: transform;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  background: @red;
 }
 
 .arrows img{

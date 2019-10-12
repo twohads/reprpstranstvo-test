@@ -18,6 +18,9 @@
 }
 .projects-all-wrapper {
   display: flex;
+  .xs-block ({
+    flex-direction: column;
+  });
 }
 .project-box1 {
   margin-right: 70px;
@@ -25,6 +28,9 @@
   .md-block ({
     margin-left: 40px;
     margin-right: 25px;
+  });
+  .xs-block ({
+    margin-bottom: 30px;
   });
 }
 .img-project-main {
@@ -34,15 +40,22 @@
   background-position: center;
   cursor: pointer;
   margin-bottom: 19px;
-  .x1440-block ({
-    width: 366px;
-  });
-  .xl1080-block ({
-    width: 322px;
-  });
-  .md-block ({
-    width: 272px;
-  });
+    .x1440-block ({
+      width: 366px;
+    });
+    .xl1080-block ({
+      width: 322px;
+    });
+    .md-block ({
+      width: 272px;
+    });
+    .sm-block ({
+      height: 450px;
+    });
+    .xs-block ({
+      width: 279px;
+      height: 194px;
+    });
 }
 
 .project-main-title {
@@ -62,13 +75,17 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-
 }
 .common-project-small-wrapp {
   display: flex;
   flex-wrap: wrap;
   max-width: 650px;
   margin: 0 auto;
+  .xs-block ({
+    flex-direction: column;
+    margin: 0;
+    margin-left: 40px;
+  });
 }
 .wrapper-project-small {
   flex:1 1 calc(~"50% - 50px");
@@ -76,6 +93,13 @@
   box-sizing:border-box;
   min-width: 100px;
   margin-bottom: 40px;
+    .sm-block ({
+      margin-bottom: 30px;
+    });
+    .xs-block ({
+      width: 279px;
+      height: 194px;
+    });
 }
 .img-project-small {
   background-size: cover;
@@ -84,6 +108,13 @@
   height: 194px;
   cursor: pointer;
   margin-bottom: 15px;
+    .sm-block ({
+      height: 140px;
+    });
+    .xs-block ({
+      width: 279px;
+      height: 194px;
+    });
 }
 .project-box-title h5{
   margin-left: 15px;
@@ -93,6 +124,14 @@
   margin-top: 30px;
   display: flex;
   align-items: center;
+    .sm-block ({
+    flex-direction: column;
+    align-items: start;
+    margin-top: 0;
+    });
+  .xs-block ({
+    margin-left: 40px;
+  });
 }
 .navigation {
   width: 300px;
@@ -110,6 +149,11 @@
   height: 54px;
   font-size: 14px;
   font-family: @fontBold ;
+    .sm-block ({
+      margin-left: 0;
+      align-self: start;
+      margin-top: 60px;
+    });
 }
 .pagination {
   display: flex;
@@ -141,8 +185,14 @@
 
 .pag-arrow-left {
   margin-right: 32px;
+  .md-block ({
+    margin-right: 9px;
+  });
 }
 
 .pag-arrow-right {
   margin-left: 40px;
+  .md-block ({
+    margin-left: 13px;
+  });
 }

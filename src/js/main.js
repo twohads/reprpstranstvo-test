@@ -65,6 +65,9 @@ $('.slider-product-items').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: false,
+    arrows: true,
+    prevArrow: $('.arrow-left__slider-project'),
+    nextArrow: $('.arrow-right__slider-project'),
     centerMode: false,
     focusOnSelect: true,
     responsive: [
