@@ -32,7 +32,7 @@ function nextItem() {
         targets: '.im-main-active',
         opacity: 0.5,
         width: '0%', // -> from '28px' to '100%',
-        duration: 70,
+        duration: 40,
         easing: 'easeInOutQuad',
         direction: 'reverse'
     });
@@ -55,7 +55,7 @@ function prevItem() {
         targets: '.im-main-active',
         opacity: 0.5,
         width: '0%', // -> from '28px' to '100%',
-        duration: 70,
+        duration: 40,
         easing: 'easeInOutQuad',
         direction: 'reverse'
     });
@@ -119,7 +119,12 @@ function run(){
     foto.style.marginRight = lastColWidht + 'px';
     wrapperProductSlider.style.marginRight = lastColWidht + 'px';
     wrappProject.style.paddingRight = (lastColWidht - 50) + 'px';
+
     consultWrapp.style.marginRight = lastColWidht + 'px';
     footerWrapp.style.paddingRight = lastColWidht + 'px';
+
+    if(document.body.clientWidth < 1280) {
+        consultWrapp.style.marginRight = (lastColWidht - 30) + 'px';
+    }
 }
 window.addEventListener('resize', run);
