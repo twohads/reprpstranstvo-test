@@ -30,10 +30,9 @@ function nextItem() {
     imageMain[activeNumber].classList.add('im-main-active');
     anime({
         targets: '.im-main-active',
-        opacity: 0.5,
-        width: '0%', // -> from '28px' to '100%',
-        duration: 40,
-        easing: 'easeInOutQuad',
+        opacity: 0.1,
+        easing: 'linear',
+        duration: 100,
         direction: 'reverse'
     });
 
@@ -53,10 +52,9 @@ function prevItem() {
     imageMain[activeNumber].classList.add('im-main-active');
     anime({
         targets: '.im-main-active',
-        opacity: 0.5,
-        width: '0%', // -> from '28px' to '100%',
-        duration: 40,
-        easing: 'easeInOutQuad',
+        opacity: 0.1,
+        easing: 'linear',
+        duration: 100,
         direction: 'reverse'
     });
 
@@ -103,7 +101,6 @@ let productSlider1 = document.querySelectorAll('.slider-product-item');
 
 for (let i = 0; i < productSlider1.length; i++){
     productSlider1[i].onclick = function (event) {
-        console.log('мимсоль');
     }
 }
 run();
@@ -128,3 +125,108 @@ function run(){
     }
 }
 window.addEventListener('resize', run);
+
+// SCRIPT FOR MODAL
+
+let modal      = document.querySelector('.modal-window'),
+    blackout   = document.querySelector('.blackout'),
+    imagesForModal     = document.querySelectorAll('.img-slider-product'),
+    close      = document.querySelector('.close'),
+    arrowLeft  = document.querySelector('.arrow-left-modal'),
+    arrowRight = document.querySelector('.arrow-right-modal'),
+    picture    = document.querySelector('.picture'),
+    number = 0;
+
+imagesForModal.forEach((img, index) => {
+    img.addEventListener('click', function () {
+        number = index;
+        modal.style.display = 'block';
+        anime({
+            targets: modal,
+            opacity: 0.1,
+            easing: 'linear',
+            duration: 200,
+            direction: 'reverse'
+        });
+        anime({
+            targets: '.picture',
+            opacity: 0.1,
+            easing: 'linear',
+            duration: 100,
+            direction: 'reverse'
+        });
+        picture.style.backgroundImage = this.style.backgroundImage;
+    });
+});
+
+arrowRight.onclick = function () {
+    anime({
+        targets: '.picture',
+        opacity: 0.5,
+        width: '0%', // -> from '28px' to '100%',
+        easing: 'linear',
+        direction: 'reverse'
+    });
+    number++;
+
+    if(number == imagesForModal.length){
+        number =  0;
+    }
+    picture.style.backgroundImage = imagesForModal[number].style.backgroundImage
+}
+
+arrowLeft.onclick = function () {
+    anime({
+        targets: '.picture',
+        width: '0%', // -> from '28px' to '100%',
+        easing: 'easeInOutQuad',
+        direction: 'reverse'
+    });
+
+    number--;
+
+    console.log(number);
+    if(number == -1){
+        console.log(number);
+        number = imagesForModal.length - 1;
+    }
+    picture.style.backgroundImage = imagesForModal[number].style.backgroundImage
+}
+
+close.onclick = function () {
+    modal.style.display = "none";
+}
+
+modal.onclick = function (event) {
+    if(event.target == blackout){
+        modal.style.display = "none";
+    }
+}
+
+
+let bouncingBall = anime({
+    targets: '.picture',
+    width: '100%', // -> from '28px' to '100%',
+    easing: 'easeInOutQuad',
+    duration: 200,
+    direction: 'alternate'
+});
+
+let burgerIcon = document.querySelector('.burger'),
+    burgerPopUp = document.querySelector('.gamburger-pop-up'),
+    burgerOverlay  = document.querySelector('.burger-overlay');
+
+burgerIcon.onclick = function () {
+    burgerPopUp.style.display = 'block';
+    anime({
+        targets: burgerPopUp,
+        opacity: 0.1,
+        easing: 'linear',
+        duration: 200,
+        direction: 'reverse'
+    });
+}
+
+burgerOverlay.onclick = function () {
+    burgerPopUp.style.display = 'none';
+}

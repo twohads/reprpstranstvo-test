@@ -6,6 +6,8 @@
 @import "projects-prew.less";
 @import "consultation.less";
 @import "footer.less";
+@import "modal.less";
+@import "burger.less";
 
 
 .reset();
@@ -226,6 +228,14 @@ header {
   align-items: center;
   color: @white;
   text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  color: @red;
+  background: white;
+  border: 1px solid @red;
+  transition: all ease-in-out 0.6s;
 }
 
 .wrap-img {
@@ -443,16 +453,20 @@ header {
   max-width: 37px;
   align-self: center;
   flex-grow: 2;
+  cursor: pointer;
     .xs-block ({
       margin-right: 100px;
     });
 }
+
 .burger-item {
   background: #3F3F3F;
   height: 2px;
   display: block;
   margin-bottom: 7px;
+  opacity: 1;
 }
+
 
 .burger-item__1 {
   width: 31px;
@@ -464,6 +478,12 @@ header {
 
 .burger-item__3 {
   width: 37px;
+}
+
+.burger:hover > .burger-item{
+  width: 38px;
+  opacity: 0.7;
+  transition: width ease-in-out 0.7sec;
 }
 
 .social {
@@ -478,9 +498,16 @@ header {
 
 .social img{
   margin-bottom: 33px;
+  cursor: pointer;
+  opacity: 1;
     .xs-block ({
       margin-bottom: 30px;
     });
+}
+
+.social img:hover {
+  opacity: 0.5;
+  transition: opacity ease-in-out 0.5s;
 }
 
 
