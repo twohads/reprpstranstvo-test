@@ -8,7 +8,22 @@
   background: rgba(0, 0, 0, 0.9);
   z-index: 1000;
 }
-
+.close {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity ease-in-out 0.5s;
+}
+.close:hover {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity ease-in-out 0.5s;
+}
 .blackout {
   width: 100%;
   height: 100%;
@@ -21,23 +36,44 @@
   position: absolute;
   top: 50%;
   left: 5%;
-  background: white;
+  opacity: 1;
+  transition: opacity ease-in-out 0.5s;
+  cursor: pointer;
 }
-
+.arrow-left-modal:hover {
+  opacity: 0.3;
+  transition: opacity ease-in-out 0.5s;
+}
+.arrow-right-modal img {
+  display: block;
+  margin-left: auto;
+}
 .arrow-right-modal {
   width: 50px;
   height: 50px;
   position: absolute;
   top: 50%;
   right: 5%;
-  background: white;
+  opacity: 1;
+  transition: opacity ease-in-out 0.5s;
+  cursor: pointer;
 }
-
+.arrow-right-modal:hover {
+  opacity: 0.3;
+  transition: opacity ease-in-out 0.5s;
+}
 .picture {
-  max-width: 500px;
-  width: 100%;
-  height: 70%;
+  width: 400px;
+  height: 500px;
   background-size: cover;
   margin-top: auto;
   margin-bottom: auto;
+    .sm-block ({
+      width: 300px;
+      height: 400px;
+    });
+    .xs-block ({
+      width: 230px;
+      height: 330px;
+    });
 }

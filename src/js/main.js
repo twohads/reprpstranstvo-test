@@ -84,7 +84,9 @@ window.addEventListener('resize', workOutContainer);
 
 // Mobile: change to slick
 
-
+window.addEventListener("orientationchange", function() {
+    window.location.reload();
+}, false);
 if(document.body.clientWidth < 578) {
     $('.line').slick({
         slidesToShow: 2,
@@ -178,32 +180,12 @@ imagesForModal.forEach((img, index) => {
     img.addEventListener('click', function () {
         number = index;
         modal.style.display = 'block';
-        anime({
-            targets: modal,
-            opacity: 0.1,
-            easing: 'linear',
-            duration: 200,
-            direction: 'reverse'
-        });
-        anime({
-            targets: '.picture',
-            opacity: 0.1,
-            easing: 'linear',
-            duration: 100,
-            direction: 'reverse'
-        });
+
         picture.style.backgroundImage = this.style.backgroundImage;
     });
 });
 
 arrowRight.onclick = function () {
-    anime({
-        targets: '.picture',
-        opacity: 0.5,
-        width: '0%', // -> from '28px' to '100%',
-        easing: 'linear',
-        direction: 'reverse'
-    });
     number++;
 
     if(number == imagesForModal.length){
@@ -213,12 +195,6 @@ arrowRight.onclick = function () {
 }
 
 arrowLeft.onclick = function () {
-    anime({
-        targets: '.picture',
-        width: '0%', // -> from '28px' to '100%',
-        easing: 'easeInOutQuad',
-        direction: 'reverse'
-    });
 
     number--;
 
@@ -241,20 +217,24 @@ modal.onclick = function (event) {
 }
 
 
-let bouncingBall = anime({
-    targets: '.picture',
-    width: '100%', // -> from '28px' to '100%',
-    easing: 'easeInOutQuad',
-    duration: 200,
-    direction: 'alternate'
-});
-
 let burgerIcon = document.querySelector('.burger'),
     burgerPopUp = document.querySelector('.gamburger-pop-up'),
-    burgerOverlay  = document.querySelector('.burger-overlay');
+    burgerOverlay  = document.querySelector('.burger-overlay'),
+    closeMenu = document.querySelector('.close-menu');
 
 burgerIcon.onclick = function () {
     burgerPopUp.style.display = 'block';
+    anime({
+        targets: burgerPopUp,
+        opacity: 0.1,
+        easing: 'linear',
+        duration: 200,
+        direction: 'reverse'
+    });
+}
+
+closeMenu.onclick = function () {
+    burgerPopUp.style.display = 'none';
     anime({
         targets: burgerPopUp,
         opacity: 0.1,
