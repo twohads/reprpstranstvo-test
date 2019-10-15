@@ -10,15 +10,20 @@ let imageMain = document.querySelectorAll('.img-maim');
 let activeNumber = images.length - 1;
 let countImages = images.length - 1;
 
-imageWidth = images[activeNumber].offsetWidth + parseInt(getComputedStyle(images[activeNumber]).marginRight);
-
-lineWidth = imageWidth * (countImages + 1);
-line.style.width = lineWidth + 'px';
-
-images[activeNumber].classList.add('im-small-active');
-imageMain[activeNumber].classList.add('im-main-active');
 
 windowWidth = window.innerWidth;
+console.log(windowWidth);
+
+
+function  workOutContainer() {
+    $(window).on('load', function(){
+        imageWidth = images[activeNumber].offsetWidth + parseInt(getComputedStyle(images[activeNumber]).marginRight);
+        lineWidth = imageWidth * (countImages + 1);
+        line.style.width = lineWidth + 'px';
+        images[activeNumber].classList.add('im-small-active');
+        imageMain[activeNumber].classList.add('im-main-active');
+    });
+}
 
 function nextItem() {
     images[activeNumber].classList.remove('im-small-active');
@@ -26,14 +31,16 @@ function nextItem() {
     activeNumber = !activeNumber ? countImages : activeNumber - 1;
 
     images[activeNumber].classList.add('im-small-active');
-    imageMain[activeNumber].classList.add('im-main-active');
+
     anime({
-        targets: '.im-main-active',
+        targets: imageMain[activeNumber],
         opacity: 0.1,
         easing: 'linear',
         duration: 100,
         direction: 'reverse'
     });
+
+    imageMain[activeNumber].classList.add('im-main-active');
 
 
     if (activeNumber > 0 || windowWidth < 800) {
@@ -48,14 +55,17 @@ function prevItem() {
     activeNumber = activeNumber === countImages ? 0 : activeNumber + 1;
 
     images[activeNumber].classList.add('im-small-active');
-    imageMain[activeNumber].classList.add('im-main-active');
+
     anime({
-        targets: '.im-main-active',
+        targets: imageMain[activeNumber],
         opacity: 0.1,
         easing: 'linear',
         duration: 100,
         direction: 'reverse'
     });
+
+    imageMain[activeNumber].classList.add('im-main-active');
+
 
     line.style.right =- (imageWidth * (countImages - activeNumber)) + 'px';
 
@@ -63,26 +73,31 @@ function prevItem() {
         line.style.right =- (imageWidth * (countImages - activeNumber - 1)) + 'px';
     }
 }
-$(window).on('load resize', function() {
-    next.onclick = nextItem;
-    prev.onclick = prevItem;
-});
 
+if(windowWidth > 578) {
+    workOutContainer();
+}
+
+next.onclick = nextItem;
+prev.onclick = prevItem;
+window.addEventListener('resize', workOutContainer);
 
 // Mobile: change to slick
 
-$(window).on('load resize', function() {
-    if ($(window).width() < 580) {
-        $('.line').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            dots: false,
-            prevArrow: null,
-            nextArrow: null,
-            infinite: false,
-        });
-    }
-});
+
+if(document.body.clientWidth < 578) {
+    $('.line').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: false,
+        //centerMode: true,
+        // centerPadding: '20px',
+        //variableWidth: true,
+        infinite: false
+    });
+}
+
 
 
 // Product slider
@@ -94,11 +109,22 @@ $('.slider-product-items').slick({
     prevArrow: $('.arrow-left__slider-project'),
     nextArrow: $('.arrow-right__slider-project'),
     responsive: [
-
         {
-            breakpoint: 768,
+            breakpoint: 800,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1
             }
         }
     ]
@@ -122,7 +148,7 @@ function run(){
         let wrappProject = document.querySelector('.wrapp-project');
         let consultWrapp = document.querySelector('.box-consultation-2');
         let footerWrapp = document.querySelector('.footer-wrapper');
-        console.log(lastColWidht);
+
         foto.style.marginRight = lastColWidht + 'px';
         wrapperProductSlider.style.marginRight = lastColWidht + 'px';
         wrappProject.style.paddingRight = (lastColWidht - 50) + 'px';

@@ -271,9 +271,16 @@ header {
   right: 0;
   left: auto;
   padding-bottom: 100px;
-  .xl1080-block ({
-    padding-bottom: 10px;
-  });
+    .xl1080-block ({
+      padding-bottom: 10px;
+    });
+    .xs-block ({
+      position: static;
+      display: block;
+      overflow: visible;
+      left: 0;
+      width: 100%;
+    });
 }
 .line .img-gallary {
   margin-right: 18px;
@@ -305,11 +312,13 @@ header {
     flex-basis: 326px;
   });
     .xs-block ({
-      margin-right: 0;
-      flex-grow: 4;
+      flex: 1 1 100%;
+      min-width: 320px;
     });
 }
-
+.box-1 .slick-slide > div {
+  margin: 0 5px;
+}
 .box-2 {
   width: 100%;
   max-width: 655px;
@@ -339,6 +348,7 @@ header {
 .box-2 .im-main-active {
   display: block;
   transition: all ease 1s;
+  opacity: 1;
 }
 .box2-wrapp {
   position: relative;
