@@ -4,7 +4,23 @@ $('.interior-slider').slick({
     dots: false,
     arrows: true,
     prevArrow: $('.interior-project-left-arrow'),
-    nextArrow: $('.interior-project-right-arrow')
+    nextArrow: $('.interior-project-right-arrow'),
+    responsive: [
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 380,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 });
 
 // SCRIPT FOR MODAL
@@ -71,7 +87,23 @@ $('.visualization-slider').slick({
     dots: false,
     arrows: true,
     prevArrow: $('.arrow-left__slider-project'),
-    nextArrow: $('.arrow-right__slider-project')
+    nextArrow: $('.arrow-right__slider-project'),
+    responsive: [
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 380,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 });
 
 let modalVisualization     = document.querySelector('.modal-visualization'),
@@ -137,11 +169,16 @@ $('.slider-plane').slick({
 let modalPlane = document.querySelector('.modal-plane'),
     btnPlane = document.querySelector('#btn-plane'),
     blackoutPlane = document.querySelector('.blackout-plane'),
-    imageAllPlane = document.querySelectorAll('plane-img');
+    imageAllPlane = document.querySelectorAll('plane-img'),
+    closePlane = document.querySelector('.close-plane');
 
 
 btnPlane.onclick = function () {
     modalPlane.style.display = 'block';
+}
+
+closePlane.onclick = function () {
+    modalPlane.style.display = 'none';
 }
 
 modalPlane.onclick = function (event) {

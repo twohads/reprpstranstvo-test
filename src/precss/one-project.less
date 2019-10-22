@@ -42,8 +42,10 @@
   background-size: cover;
   background-position: center;
   .xs-block ({
-    max-width: 306px;
-    height: 180px;
+    width: 84%;
+    height: 249px;
+  });
+  .xxs-block ({
   });
 }
 .box-left-one-project h1 {
@@ -54,7 +56,7 @@
       margin-bottom: 45px;
     });
     .xs-block ({
-      margin-top: 40px;
+      margin-top: 20px;
       width: 90%;
     });
 }
@@ -129,7 +131,7 @@
     .sm-block ({
       flex:1 1 calc(~"35% - 5px");
     });
-    .xs-block ({
+    .xxs-block ({
       flex:1 1 calc(~"55% - 5px");
     });
 }
@@ -146,6 +148,9 @@
       flex:1 1 calc(~"65% - 5px");
     });
     .xs-block ({
+      flex:1 1 calc(~"50% - 5px");
+    });
+    .xxs-block ({
       flex:1 1 calc(~"45% - 5px");
     });
 }
@@ -198,14 +203,32 @@
   padding-left: 140px;
   padding-right: 140px;
   padding-bottom: 30px;
+  .md-block ({
+    padding-left: 70px;
+    padding-right: 70px;
+  });
+  .sm-block ({
+    padding-left: 40px;
+    padding-right: 40px;
+  });
+  .xs-block ({
+    padding-left: 10px;
+    padding-right: 10px;
+  });
 }
 .interior-wrapper {
   display: flex;
+  .sm-block ({
+    align-items: center;
+  });
 }
 .arrow-for-interior {
   align-self: flex-end;
   margin-left: auto;
   margin-right: 10px;
+  .md-block ({
+    margin-right: -9px;
+  });
 }
 
 .interior-wrapper h2{
@@ -213,6 +236,12 @@
   width: 470px;
   margin-top: 0;
   margin-bottom: 0;
+  .md-block ({
+    width: 337px;
+  });
+  .sm-block ({
+    width: 230px;
+  });
 }
 
 .arrow-for-interior div {
@@ -222,6 +251,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  opacity: 1;
+}
+.arrow-for-interior div:hover {
+  opacity: 0.5;
+  transition: opacity ease-in-out 0.5s;
 }
 .interior-slider {
   width: 100%;
@@ -229,13 +264,24 @@
 }
 .interior .slick-slide  > div {
   margin-right: 30px;
+  .md-block ({
+    margin-right: 10px;
+  });
 }
 
 .interior-image {
-  width: 380px;
+  max-width: 360px;
   height: 248px;
   background-size: cover;
   background-position: center;
+  .md-block ({
+    max-width: 240px;
+    height: 190px;
+  });
+  .xs-block ({
+    max-width: 360px;
+    height: 200px;
+  });
 }
 
 .picture.picture-interior {
@@ -253,27 +299,60 @@
   padding-right: 140px;
   padding-top: 100px;
   padding-bottom: 100px;
+    .md-block ({
+      padding-left: 70px;
+      padding-right: 70px;
+    });
+    .sm-block ({
+      padding-left: 40px;
+      padding-right: 40px;
+    });
+    .xs-block ({
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    });
 }
 .visual-wrapper {
   position: relative;
   height: 450px;
+  .xs-block ({
+    height: 360px;
+  });
 }
 .visual-wrapper h2 {
   color: white;
 }
 
 .visualization-image {
-  width: 380px;
+  max-width: 360px;
   height: 248px;
   background-size: cover;
   background-position: center;
+    .md-block ({
+      max-width: 240px;
+      height: 190px;
+    });
+    .xs-block ({
+      max-width: 360px;
+      height: 200px;
+    });
 }
 
 .visualization .slick-slide  > div {
   margin-right: 30px;
+    .md-block ({
+      margin-right: 10px;
+    });
 }
 .visualization .arrows {
   right: 30px;
+  .md-block ({
+    right: 11px;
+  });
 }
 
 .visualization .arrows > div {
@@ -397,6 +476,9 @@
   height: 90%;
   display: flex;
   justify-content: center;
+  .sm-block ({
+    width: 100%;
+  });
 }
 .arrow-left-modal__plane {
   width: 50px;
@@ -407,6 +489,9 @@
   opacity: 1;
   transition: opacity ease-in-out 0.5s;
   cursor: pointer;
+  .sm-block ({
+    left: -8%;
+  });
 }
 .arrow-left-modal__plane:hover {
   opacity: 0.3;
@@ -425,6 +510,9 @@
   opacity: 1;
   transition: opacity ease-in-out 0.5s;
   cursor: pointer;
+  .sm-block ({
+    right: -8%;
+  });
 }
 .arrow-right-modal__plane:hover {
   opacity: 0.3;
@@ -432,9 +520,8 @@
 }
 
 .slider-plane {
-  width: 600px;
-  height: 600px;
-  background: cyan;
+  width: 500px;
+  height: 500px;
   margin-top: auto;
   margin-bottom: auto;
   .sm-block ({
@@ -448,14 +535,32 @@
 }
 
 .plane-img {
-  width: 600px;
-  height: 500px;
+  max-width: 400px;
+  height: 505px;
   background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  background-position: center;
+    .sm-block ({
+      width: 300px;
+      height: 400px;
+      margin-left: 0;
+      margin-right: 0;
+    });
+    .xs-block ({
+      width: 230px;
+      height: 330px;
+    });
 }
 
 .modal-plane .slick-slide  > div {
   width: 600px;
   height: 500px;
+  .sm-block ({
+    margin-left: auto;
+    margin-right: auto;
+  });
 }
 
 .slick-track {
@@ -467,8 +572,9 @@
   margin-right: 0;
 }
 
-
-
+.social.social__one-project {
+  margin-top: 75px;
+}
 
 
 
