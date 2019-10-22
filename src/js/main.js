@@ -12,8 +12,6 @@ let countImages = images.length - 1;
 
 
 windowWidth = window.innerWidth;
-console.log(windowWidth);
-
 
 function  workOutContainer() {
     $(window).on('load', function(){
@@ -214,36 +212,4 @@ modal.onclick = function (event) {
     if(event.target == blackout){
         modal.style.display = "none";
     }
-}
-
-
-let burgerIcon = document.querySelector('.burger'),
-    burgerPopUp = document.querySelector('.gamburger-pop-up'),
-    burgerOverlay  = document.querySelector('.burger-overlay'),
-    closeMenu = document.querySelector('.close-menu');
-
-burgerIcon.onclick = function () {
-    burgerPopUp.style.display = 'block';
-    anime({
-        targets: burgerPopUp,
-        opacity: 0.1,
-        easing: 'linear',
-        duration: 200,
-        direction: 'reverse'
-    });
-}
-
-closeMenu.onclick = function () {
-    burgerPopUp.style.display = 'none';
-    anime({
-        targets: burgerPopUp,
-        opacity: 0.1,
-        easing: 'linear',
-        duration: 200,
-        direction: 'reverse'
-    });
-}
-
-burgerOverlay.onclick = function () {
-    burgerPopUp.style.display = 'none';
 }
