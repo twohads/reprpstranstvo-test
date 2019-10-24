@@ -7,7 +7,7 @@
 
 .projects__main-desc, .breadcrumbs {
   margin-left: 140px;
-  .sm-block ({
+  .md-block ({
     margin-left: 40px;
   });
 }
@@ -21,7 +21,7 @@
 .wrap-offer.wrapp-offer__projects {
   max-width: 690px;
   width: 100%;
-  .sm-block ({
+  .md-block ({
     margin-left: 40px;
   });
 }
@@ -62,6 +62,7 @@
   height: 550px;
   background-size: cover;
   background-position: center;
+  margin-right: 20px;
   margin-left: auto;
     .md-block ({
       width: 95%;
@@ -70,9 +71,68 @@
 
 .tzfoto__project-for-xs {
   display: none;
-  .sm-block ({
+  .xs-block ({
     display: block;
     margin-left: 40px;
     width: 70%;
   });
+}
+
+// All project prew
+.wrapp-project.wrapp-project__all-project h2 {
+  margin-bottom: 0;
+}
+.wrapp-project.wrapp-project__all-project {
+  margin-top: 0;
+  .xs-block ({
+    margin-top: 80px;
+  });
+}
+
+.box2-wrapp.box2-wrapp__all-project {
+  height: 640px;
+}
+
+// Filter
+.wrapp-project.wrapp-project__all-project .filter.filter-hedder {
+  margin-left: 529px;
+  .x1440-block ({
+    margin-left: 436px;
+  });
+  .xl1080-block ({
+    margin-left: 391px;
+  });
+  .md-block ({
+    margin-left: 297px;
+  });
+  .sm-block ({
+    margin-left: 0;
+    margin-top: 40px;
+  });
+}
+.filter {
+  display: flex;
+  margin-bottom: 54px;
+  .xs-block ({
+    flex-direction: column;
+  });
+}
+
+.filter-wrap {
+  display: flex;
+  margin-right: 40px;
+  cursor: pointer;
+  align-items: center;
+  opacity: 1;
+  .xs-block ({
+    margin-bottom: 15px;
+  });
+}
+.filter-wrap:hover {
+  opacity: 0.5;
+  transition: opacity ease-in-out 0.5s;
+}
+
+.filter-wrap img{
+  margin-right: 15px;
 }

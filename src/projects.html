@@ -60,7 +60,7 @@
             <img src="img/tatiana-zinkova.png" alt="" class="tzfoto__project-for-xs">
         </div>
         <div class="box-2 box-2__projects">
-            <div class="box2-wrapp">
+            <div class="box2-wrapp box2-wrapp__all-project">
                <div class="zinkova-foto__project" style="background-image: url(img/tatiana-zinkova.png)">
 
                </div>
@@ -80,17 +80,27 @@
         </div>
     </header>
     <section class="project" id="project">
-        <div class="wrapp-project">
+        <div class="wrapp-project wrapp-project__all-project">
             <div class="title-box">
                 <div class="small-description">
                     <span class="cube-active"></span>
                     <p class="small-title">Обзор</p>
                 </div>
-                <h2>Мои проекты</h2>
+                <h2>Проекты</h2>
+                <div class="filter filter-hedder">
+                    <a class="filter-wrap">
+                        <img src="img/24px(2)%203.png" alt="">
+                        <p>Частные интерьеры</p>
+                    </a>
+                    <a class="filter-wrap">
+                        <img src="img/24px(3).png" alt="">
+                        <p>Коммерческие</p>
+                    </a>
+                </div>
             </div>
             <div class="projects-all-wrapper">
-                <div class="project-box1">
-                    <div class="wrapper-project-main">
+                <div class="project-box1 project-box1__all-project">
+                    <div class="wrapper-project-main wrapper-project-main__all-project">
                         <div class="img-project-main" style="background-image: url(img/mint.jpg)"></div>
                         <a href="one-project.html" class="project-box-title project-box-title__main">
                             <span class="cube-active"></span>
@@ -148,7 +158,100 @@
             </div>
         </div>
     </section>
+    <section class="consultation" id="consultation">
+        <div class="wrap-consultation">
+            <div class="box-consultation-1">
+                <div class="title-box">
+                    <div class="small-description">
+                        <span class="cube-active"></span>
+                        <p class="small-title">Обратный  звонок</p>
+                    </div>
+                    <h2>Бесплатная консультация по проекту</h2>
+                </div>
+            </div>
+            <div class="box-consultation-2">
+                <h4 class="consultation-title">Закажите консультацию</h4>
+                <form class="contact_form" action="">
+                    <div>
+                        <input type="text" name="name" placeholder="Имя">
+                    </div>
+                    <div>
+                        <input type="tel" name="tel" placeholder="Телефон">
+                    </div>
+                    <div>
+                        <input class="checkbox" type="checkbox" checked>
+                        <p>Даю согласие на обработку персональных данных, с политикой ознакомлен</p>
+                    </div>
+                    <button type="submit" class="btn btn-button">Заказать</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="footer" id="footer">
+        <div class="footer-wrapper">
+            <div class="footer-box footer-box-1">
+                <img src="img/logo.png" class="logo-footer">
+                <a href="" class="footer-tel">+7 (985) 975-34-25</a>
+                <div class="social-footer">
+                    <a href="" class="social-footer-link">
+                        <img src="img/facebook-white.png" alt="">
+                        <img src="img/vk-white.png" alt="">
+                        <img src="img/insta-white.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-box footer-box-2">
+                <a href="" class="chapter-footer">Дизайн интерьеров</a>
+                <a href="" class="chapter-footer">Планировка</a>
+                <a href="" class="chapter-footer">Проекты</a>
+                <a href="" class="chapter-footer">Блог</a>
+            </div>
+            <div class="footer-box footer-box-3">
+                <ul class="add-service-foorter">
+                    <li class="add-service-footer-title">
+                        <h5>Доп услуги</h5>
+                    </li>
+                    <li class="service-footer-item">
+                        <a href="">Визуализация интерьера</a>
+                    </li>
+                    <li class="service-footer-item">
+                        <a href="">Авторский надзор</a>
+                    </li>
+                    <li class="service-footer-item">
+                        <a href="">Отдельные чертежи</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-box footer-box-4">
+                <div class="footer-blog">
+                    <img src="img/footer-blo-prew1-1.png" alt="" class="footer-blog-prew">
+                    <div class="footer-title-box">
+                        <h5>Квартира на Рублевском шоссе</h5>
+                        <span>01.02.2019</span>
+                    </div>
+                </div>
+                <div class="footer-blog">
+                    <img src="img/footer-blo-prew1.png" alt="" class="footer-blog-prew">
+                    <div class="footer-title-box">
+                        <h5>Квартира на Рублевском шоссе</h5>
+                        <span>01.02.2019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-additional">
+            <div class="copyright">
+                <p>Татьяна Зинькова 2019 ©</p>
+            </div>
+            <a href="" class="private">Политика конфидициальности</a>
+            <a href="" class="agreement">Пользовательское соглашение</a>
+        </div>
+    </section>
 </div>
+
+
+
+
 <div class="modal-window">
     <div class="close" id="close">
         <img src="img/close.png" alt="">
@@ -218,7 +321,7 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/anime.min.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
-<script src="js/main.js"></script>
+<script src="js/default.js"></script>
 </body>
 </html>
 
