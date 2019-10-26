@@ -41,21 +41,21 @@ function run(){
 
     if(document.body.clientWidth >= 576){
         let lastColWidht = document.querySelector('.box-3').offsetWidth;
-        let foto = document.querySelector('.foto');
+        //let foto = document.querySelector('.foto');
         let wrapperProductSlider = document.querySelector('.wrapper-product-slider');
         let wrappPlanningProject = document.querySelector('.planning-project-prew');
-        let consultWrapp = document.querySelector('.box-consultation-2');
+        //let consultWrapp = document.querySelector('.box-consultation-2');
         let footerWrapp = document.querySelector('.footer-wrapper');
 
-        foto.style.marginRight = lastColWidht + 'px';
+        //foto.style.marginRight = lastColWidht + 'px';
         wrapperProductSlider.style.marginRight = lastColWidht + 'px';
         wrappPlanningProject.style.paddingRight = lastColWidht + 'px';
 
-        consultWrapp.style.marginRight = lastColWidht + 'px';
+        //consultWrapp.style.marginRight = lastColWidht + 'px';
         footerWrapp.style.paddingRight = lastColWidht + 'px';
 
         if(document.body.clientWidth < 1280) {
-            consultWrapp.style.marginRight = 0 + 'px';
+            //consultWrapp.style.marginRight = 0 + 'px';
         }
     }
 }
@@ -96,7 +96,6 @@ arrowLeft.onclick = function () {
 
     console.log(number);
     if(number == -1){
-        console.log(number);
         number = imagesForModal.length - 1;
     }
     picture.style.backgroundImage = imagesForModal[number].style.backgroundImage
